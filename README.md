@@ -10,7 +10,7 @@ Este tutorial demonstra como extrair, modelar e visualizar dados de uma API pagi
 ## Passo a Passo
 
 1. **[Conectar à API:](https://rickandmortyapi.com/documentation)**
-   * Crie uma nova consulta no Power Query.
+   * Crie uma nova consulta no Power Query usando o conector Web e insira o link da API que você obteu na documentação.
    * Utilize a função `Web.Contents` para fazer uma requisição à API, utilizando o parâmetro `RelativePath` para construir a URL dinamicamente.
    * Defina uma função personalizada que recebe o número da página como parâmetro.
 ```
