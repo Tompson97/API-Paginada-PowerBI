@@ -3,9 +3,9 @@ Técnica de extração, paginação, modelagem e publicação de um relatório d
 
 [API Rick e Morty](https://rickandmortyapi.com/)
 
-[<img src="https://i.ibb.co/JqpWrfc/Rick-e-Morty.png" alt="capa" border="0">](https://x.gd/lP4KX)
+[<img src="https://i.ibb.co/JqpWrfc/Rick-e-Morty.png" alt="capa" border="0">](https://x.gd/egkIS)
 
-[Relatório de Personagens](https://x.gd/lP4KX)
+[Relatório de Personagens](https://x.gd/egkIS)
 
 Função para extrair os dados de cada página da API usando o editor Avançando do Power Query.\
 Neste mesmo código usei o RelativePath para quebrar a URL de consulta, dessa forma as atualizações agendadas podem ocorrer no Power Bi Serviços.\
