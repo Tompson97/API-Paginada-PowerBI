@@ -46,13 +46,14 @@ in
    * Invoque a função criada e selecione a coluna com os números de páginas.
    * Após esse processo o Power Query irá extrair cada página da API seguinte a sequência numérica da coluna que foi criada.
 
-4. **Modelar os dados:**
+3. **Modelar os dados:**
    * Expandir as colunas para obter os dados desejados.
    * Alterar os tipos de dados das colunas, se necessário.
 
-5. **Criar visualizações:**
+4. **Criar visualizações:**
    * Carregar os dados no modelo de dados do Power BI.
    * Criar gráficos e tabelas para visualizar os dados.
+   * Publicar o relatório
 
 
 [<img src="https://i.ibb.co/JqpWrfc/Rick-e-Morty.png" alt="capa" border="0">](https://x.gd/egkIS)
