@@ -1,15 +1,18 @@
-# API-Paginada-PowerBI
-Técnica de extração, paginação, modelagem e publicação de um relatório de personagens da animação Rick e Morty no Power BI.
+# Extraindo e Visualizando Dados de uma API Paginada no Power BI
 
-[API Rick e Morty](https://rickandmortyapi.com/)
+## Introdução
+Este tutorial demonstra como extrair, modelar e visualizar dados de uma API paginada (ex: Rick and Morty) no Power BI. Utilizaremos o Power Query para criar uma função personalizada que busca os dados de cada página da API e, em seguida, combinamos os resultados em uma única tabela.
 
-[<img src="https://i.ibb.co/JqpWrfc/Rick-e-Morty.png" alt="capa" border="0">](https://x.gd/egkIS)
+## Pré-requisitos
+* Power BI Desktop
+* Conhecimento básico da linguagem M do Power Query
 
-[Relatório de Personagens](https://x.gd/egkIS)
+## Passo a Passo
 
-Função para extrair os dados de cada página da API usando o editor Avançando do Power Query.\
-Neste mesmo código usei o RelativePath para quebrar a URL de consulta, dessa forma as atualizações agendadas podem ocorrer no Power Bi Serviços.\
-As linhas de códigos que iniciam com # são para tratamento de dados, inseridas automaticamente pelo Power Query, mas são opcionais.
+1. **[Conectar à API:](https://rickandmortyapi.com/documentation)**
+   * Crie uma nova consulta no Power Query.
+   * Utilize a função `Web.Contents` para fazer uma requisição à API, utilizando o parâmetro `RelativePath` para construir a URL dinamicamente.
+   * Defina uma função personalizada que recebe o número da página como parâmetro.
 ```
 (page as text)=>
 
@@ -31,17 +34,27 @@ let
 in
     #"Tipo Alterado"
 ```
-
-Após inserir esse código no editor avançado do Power Query uma função será criada e solicitará o valor da variável "page" que determinará o número de página. Você pode testar inserindo o número da página desejada, mas precisamos extrair os dados de todas as páginas de uma vez para seguir com o tratamento, limpeza e posteriormente com a construção do relatório no Power BI.
-
-Para descobrir o número total de páginas faça um teste na função inserindo a primeira página, a API irá retornar uma tabela com vários colunas e uma delas irá conter o total de páginas "pages". Remova todas as outras colunas e exclua as linhas duplicadas, isso irá resultar em uma tabela contendo apenas uma linha com uma coluna com o total de páginas existentes. \
-O próximo passo será criar uma coluna com uma lista que vai de 1 até o numero total de páginas, acesse o meno "Adicionar Coluna" do Power Query e selecione "Coluna Personalizada" e insira o seguinte comando:\
+2. **Usar a função para retornar o número de páginas:**
+   * Insira um número qualquer de página na função para retornar uma tabela.
+   * Selecione a coluna com o número total de páginas e exclua todas as outras.
+   * Remova as duplicatas, dessa forma restará apenas uma linha na coluna.
+   * Criei uma nova coluna utilizando a função `List.Numbers` para gerar uma lista com todos os números de páginas.
 ```
 =List.Numbers(1, [nome_da_coluna_com_o_total_de_paginas])
 ```
-Pressione "OK" uma nova coluna irá surgir e você precisa expandir os dados para exibir todas as linhas da lista criada.\
-Altere o tipo de dados da coluna com os números de paginas para texto.\
-Com a nova coluna criada vá novamente ao menu "Adicionar Coluna" selecione "Invocar Função Personalizada" selecione a função que foi criada no início da nossa consulta e selecione a coluna onde estão as sequência de números de cada página.\
+   * Selecione a nova coluna e altere seu tipo de dados para texto.
+   * Invoque a função criada e selecione a coluna com os números de páginas.
+   * Após esse processo o Power Query irá extrair cada página da API seguinte a sequência numérica da coluna que foi criada.
 
-Pronto!
-A extração dos dados de todas as páginas foi criado, você pode seguir com a limpeza e tratamento dos dados.
+4. **Modelar os dados:**
+   * Expandir as colunas para obter os dados desejados.
+   * Alterar os tipos de dados das colunas, se necessário.
+
+5. **Criar visualizações:**
+   * Carregar os dados no modelo de dados do Power BI.
+   * Criar gráficos e tabelas para visualizar os dados.
+
+
+[<img src="https://i.ibb.co/JqpWrfc/Rick-e-Morty.png" alt="capa" border="0">](https://x.gd/egkIS)
+
+[Relatório de Personagens](https://x.gd/egkIS)
