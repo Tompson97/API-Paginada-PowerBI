@@ -2,6 +2,9 @@
 Técnica de extração, paginação, modelagem e publicação de um relatório de personagens da animação Rick e Morty no Power BI.
 
 [API Rick e Morty](https://rickandmortyapi.com/)\
+
+[<img src="https://i.ibb.co/JqpWrfc/Rick-e-Morty.png" alt="capa" border="0">](https://x.gd/lP4KX)
+
 [Relatório de Personagens](https://x.gd/lP4KX)
 
 Função para extrair os dados de cada página da API usando o editor Avançando do Power Query.\
