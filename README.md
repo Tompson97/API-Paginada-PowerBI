@@ -1,7 +1,8 @@
 # API-Paginada-PowerBI
 Técnica de extração, paginação, modelagem e publicação de um relatório de personagens da animação Rick e Morty no Power BI.
 
-[API Rick e Morty](https://rickandmortyapi.com/)
+[API Rick e Morty](https://rickandmortyapi.com/)\
+[Relatório de Personagens](https://x.gd/lP4KX)
 
 Função para extrair os dados de cada página da API usando o editor Avançando do Power Query.\
 Neste mesmo código usei o RelativePath para quebrar a URL de consulta, dessa forma as atualizações agendadas podem ocorrer no Power Bi Serviços.\
